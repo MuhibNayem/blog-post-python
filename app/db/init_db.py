@@ -1,5 +1,4 @@
-from sqlalchemy.orm import Session
-from app.db import base_class # Import all models
+from app.db import base_class
 from app.db.session import engine
 
 def init_db():

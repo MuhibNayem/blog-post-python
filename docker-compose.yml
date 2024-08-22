@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     environment:
-      - DATABASE_URL=postgresql://postgres:password@db/blog_post
+      - DATABASE_URL=postgresql+psycopg2://postgres:password@db:5432/blog_post
       - SECRET_KEY=4eb17128-c0c4-4f85-adc3-36dc56fa3aaa
     volumes:
       - .:/app

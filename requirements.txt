@@ -11,3 +11,4 @@ httpx
 databases
 starlette
 python-multipart
+alembic==1.11.1
