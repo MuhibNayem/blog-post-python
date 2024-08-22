@@ -1,0 +1,27 @@
+# Exclude the virtual environment
+venv/
+env/
+
+# Exclude Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude Dockerfile and Docker Compose files from context
+Dockerfile
+docker-compose.yml
+
+# Exclude Git files
+.git/
+.gitignore
+
+# Exclude local IDE/editor files
+.vscode/
+.idea/
+
+# Exclude other unnecessary files
+*.md
+*.log
+*.csv
+*.dat

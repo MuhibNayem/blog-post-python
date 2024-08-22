@@ -1,0 +1,31 @@
+services:
+  web:
+    image: fastapi-blog-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastapi_blog_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db/blog_post
+      - SECRET_KEY=4eb17128-c0c4-4f85-adc3-36dc56fa3aaa
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: blog_post
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
